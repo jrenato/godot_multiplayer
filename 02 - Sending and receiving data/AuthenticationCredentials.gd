@@ -1,4 +1,4 @@
-# Should only exist on clients application, i.e. player's game releases
+# Should only exist on clientss application, i.e. player's game releases
 extends Node
 
 

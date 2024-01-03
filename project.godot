@@ -14,3 +14,7 @@ config/name="Godot Multiplayer"
 run/main_scene="res://01 - Setting up a Server/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AuthenticationCredentials="*res://02 - Sending and receiving data/AuthenticationCredentials.tscn"

@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3682crnlgnbg"]
-
-[ext_resource type="Script" path="res://02 - Sending and receiving data/LoginScreen.gd" id="1_hbkdi"]
+[gd_scene load_steps=2 format=3 uid="uid://c3682crnlgnbg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oymwe"]
 font_color = Color(1, 0.2, 0.2, 1)
@@ -12,8 +10,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hbkdi")
-avatar_screen_scene = "res://02.sending-and-receiving-data/AvatarScreen.tscn"
 
 [node name="UserLineEdit" type="LineEdit" parent="."]
 layout_mode = 1
