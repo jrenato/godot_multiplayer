@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://ccpdbn7e8yvnk"]
+[gd_scene load_steps=2 format=3 uid="uid://ccpdbn7e8yvnk"]
+
+[ext_resource type="Script" path="res://02 - Sending and receiving data/Server.gd" id="1_6pr65"]
 
 [node name="Server" type="Node"]
+script = ExtResource("1_6pr65")
+database_file_path = null
 
 [node name="Label" type="Label" parent="."]
 offset_left = 522.0
