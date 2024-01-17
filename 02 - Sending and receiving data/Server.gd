@@ -23,10 +23,12 @@ func _process(delta: float) -> void:
 			authenticate_player(peer, message)
 		elif "get_authentication_token" in message:
 			get_authentication_token(peer, message)
+		elif "get_avatar" in message:
+			get_avatar(peer, message)
 
 
 func load_database() -> void:
-	var file: FileAccess = FileAccess.open(database_file_path, FileAccess.READ)
+	var file = FileAccess.open(database_file_path, FileAccess.READ)
 	var file_contents: String = file.get_as_text()
 	fake_database = JSON.parse_string(file_contents)
 
@@ -51,3 +53,16 @@ func get_authentication_token(peer: PacketPeerUDP, message: Dictionary) -> void:
 		if credentials["token"] == logged_users[credentials["user"]]:
 			var token = logged_users[credentials["user"]]
 			peer.put_var(JSON.stringify(token))
+
+
+func get_avatar(peer: PacketPeerUDP, message: Dictionary) -> void:
+	var dictionary: Dictionary = message
+	if "user" in dictionary:
+		var user = dictionary["user"]
+		if dictionary["token"] == logged_users[user]:
+			var avatar: String = fake_database[dictionary['user']]['avatar']
+			var nickname: String = fake_database[dictionary['user']]['nickname']
+			var response: Dictionary = {
+				"avatar": avatar, "nickname": nickname
+			}
+			peer.put_var(JSON.stringify(response))

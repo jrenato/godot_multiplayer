@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bp82hdnaonlh6"]
+[gd_scene load_steps=2 format=3 uid="uid://bp82hdnaonlh6"]
+
+[ext_resource type="Script" path="res://02 - Sending and receiving data/MainMenu.gd" id="1_ivwso"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ivwso")
+server_scene = "res://02 - Sending and receiving data/Server.tscn"
+client_scene = "res://02 - Sending and receiving data/LoginScreen.tscn"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -24,6 +29,7 @@ grow_vertical = 2
 text = "Are you a..."
 
 [node name="ServerButton" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,6 +45,7 @@ grow_vertical = 2
 text = "Server"
 
 [node name="ClientButton" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
